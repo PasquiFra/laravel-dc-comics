@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShowProductController;
+use App\Http\Controllers\ComicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', HomeController::class);
 
-Route::get('comics', function () {
-    return view('comics');
-})->name('comics');
+Route::get('comics', ComicsController::class)->name('comics');
 
-Route::get('show/{index}', function ($index) {
-
-    $comics = config('comics');
-    foreach ($comics as $i => $c) {
-        if ($i == $index) $comic = $c;
-    };
-
-    return view('products.show', compact('comic'));
-})->name('show');
+Route::get('show/{index}', ShowProductController::class)->name('show');
