@@ -1,0 +1,178 @@
+#show-comics {
+
+    background-color: rgb(255, 255, 255);
+
+    .container {
+        width: 75%;
+        position: relative;
+        padding: 1.2rem 0;
+    }
+
+    .stripe {
+        height: 75px;
+        background-color: dodgerblue;
+    }
+
+    #current-series {
+        position: absolute;
+        top: -285px;
+        left: 0;
+
+
+        figure {
+            position: relative;
+            width: 175px;
+            height: 275px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.493);
+
+            img {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+
+                height: 100%;
+                width: auto;
+            }
+
+            span {
+                position: absolute;
+                background-color: rgb(25, 166, 201);
+                color: white;
+                font-size: 0.8rem;
+                padding: 3px;
+
+                &.add-1 {
+                    top: 0;
+                    left: 0;
+
+                }
+
+                &.add-2 {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+
+    }
+
+    .space-between {
+        justify-content: space-between;
+        flex-grow: 0;
+    }
+
+    #comic-content {
+        flex-wrap: wrap;
+        display: flex;
+        max-width: calc(100% / 3 * 2);
+        margin-right: 20px;
+
+        #info {
+            height: 60px;
+            width: 100%;
+            margin: 15px 0;
+            border-bottom: 1px solid black;
+            background-color: #55BA59;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: #003F5E;
+            font-size: 2rem;
+        }
+
+        .price {
+            padding: 0 20px;
+            color: #B0EC66;
+            flex-grow: 1;
+            align-items: center;
+            border-right: 1px solid black;
+            font-weight: 600;
+
+            span {
+                color: white;
+            }
+        }
+
+        .available {
+            color: #B0EC66;
+            align-items: center;
+
+            div {
+                padding: 10px;
+            }
+
+            .check-available {
+                font-weight: 600;
+                color: white;
+            }
+        }
+
+        p {
+            line-height: 25px;
+            color: rgb(65, 64, 64);
+        }
+
+    }
+
+    #main-bottom {
+
+        width: 100%;
+        color: #104558;
+
+        #authors {
+
+            width: 50%;
+            flex-grow: 1;
+            flex-shrink: 0;
+
+            #artists,
+            #writers {
+
+                margin: 15px 0;
+                padding: 7px 0;
+                border-top: 1px solid rgba(207, 205, 205, 0.603);
+
+                .content {
+                    width: 75%;
+                }
+
+                a {
+                    color: dodgerblue;
+                    text-transform: capitalize;
+                }
+            }
+
+            #writers {
+                border-bottom: 1px solid rgba(207, 205, 205, 0.603);
+            }
+        }
+
+        #specs {
+            padding-left: 25px;
+            width: 50%;
+
+            a {
+                color: dodgerblue;
+                text-transform: uppercase;
+            }
+
+            >div {
+                display: flex;
+                border-top: 1px solid rgba(207, 205, 205, 0.603);
+
+                margin: 15px 0;
+                padding: 7px 0;
+
+                :first-child {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
