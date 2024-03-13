@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ShowProductController;
-use App\Http\Controllers\ComicsController;
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
-Route::get('comics', ComicsController::class)->name('comics');
+Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 
-Route::get('show/{index}', ShowProductController::class)->name('show');
+Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');

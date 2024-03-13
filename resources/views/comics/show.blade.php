@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @section('title', 'Home')
@@ -8,18 +9,18 @@
         <div class="flex container">
             <div id="current-series">
                 <figure>
-                    <img src="{{$comic['thumb']}}" alt="">
+                    <img src="{{$comic->thumb}}" alt="">
                     <span class="add-1">COMIC BOOK</span>
                     <span class="add-2">VIEW GALLERY</span>
                 </figure>
             </div>
             <div class="flex space-between width-full">
                 <div id="comic-content">
-                    <h2>{{$comic['title']}}</h2>
+                    <h2>{{$comic->title}}</h2>
                     <div id="info" class="flex space-between">
                         <div class="price flex space-between">
                             <div>
-                                U.S. Price: <span>{{$comic['price']}}</span>
+                                U.S. Price: <span>{{$comic->price}}</span>
                             </div>
                             <div>AVAILABLE</div>
                         </div>
@@ -27,7 +28,7 @@
                             <div class="check-available">Check availability</div>
                         </div>
                     </div>
-                    <p> {{$comic['description']}} </p>
+                    <p> {{$comic->description}} </p>
                 </div>
                 <div id="adv">
                     <img src=" {{Vite::asset('/resources/img/adv.jpg')}} " alt="DC POWER VISA">
@@ -41,7 +42,7 @@
                             Art by:
                         </div>
                         <div class="content">
-                            @foreach ($comic['artists'] as $artist )
+                            @foreach ($comic->artists as $artist )
                             <a href="#">{{$artist}}{{$loop->last ? '.' : ','}}</a>
                             @endforeach
                         </div>
@@ -51,7 +52,7 @@
                             Written by:
                         </div>
                         <div class="content">
-                            @foreach ($comic['writers'] as $writer )
+                            @foreach ($comic->writers as $writer )
                             <a href="#">{{$writer}}{{$loop->last ? '.' : ','}}</a>
                             @endforeach
                         </div>
@@ -62,16 +63,16 @@
                     <div>
                         <span>Series: </span> 
                         <span>
-                            <a href="#">{{$comic['series']}}</a>
+                            <a href="#">{{$comic->series}}</a>
                         </span>
                     </div>
                     <div>
                         <span>U.S. Price: </span>
-                        <span>{{$comic['price']}}</span>
+                        <span>{{$comic->price}}</span>
                     </div>
                     <div>
                         <span>On Sale Date: </span>
-                        <span>{{$comic['sale_date']}}</span>
+                        <span>{{$comic->sale_date}}</span>
                     </div>
                 </div>
             </div>

@@ -67,6 +67,7 @@
     }
 
     #comic-content {
+        margin-top: 50px;
         flex-wrap: wrap;
         display: flex;
         max-width: calc(100% / 3 * 2);
@@ -120,8 +121,12 @@
 
     }
 
-    #main-bottom {
+    #adv {
+        margin-top: 50px;
+    }
 
+    #main-bottom {
+        margin: 50px 0;
         width: 100%;
         color: #104558;
 

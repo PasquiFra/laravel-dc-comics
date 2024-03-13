@@ -1,7 +1,4 @@
 
-@php
- $books=config('comics');   
-@endphp
 
 @extends('layouts.layout')
 
@@ -14,15 +11,15 @@
                 <h1 class="flex">current series</h1>
             </div>
             <ul class="card-col">
-                @foreach ($books as $i => $b)
+                @foreach ($books as $book)
                 <li class="card">
                     <figure>
-                        <a href="{{route('show', $loop->index)}}">
-                            <img src="{{$b['thumb']}}" alt="">
+                        <a href="{{route('comics.show', $book->id)}}">
+                            <img src="{{$book['thumb']}}" alt="">
                         </a>
                     </figure>
                     <h5>
-                        <a href="{{route('show', $loop->index)}}">{{$b['title']}}</a>
+                        <a href="{{route('comics.show', $book->id)}}">{{$book['title']}}</a>
                     </h5>
                 </li>
                 @endforeach
