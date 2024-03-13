@@ -15,7 +15,6 @@
             </div>
             <ul class="card-col">
                 @foreach ($books as $i => $b)
-                @php dump($b) @endphp
                 <li class="card">
                     <figure>
                         <a href="{{route('show', $loop->index)}}">
