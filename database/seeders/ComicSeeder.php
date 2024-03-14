@@ -230,9 +230,11 @@ class ComicSeeder extends Seeder
 
         foreach ($comics as $comic) {
             $db_comic = new Comic();
-            foreach ($comic as $key => $value) {
-                $db_comic->$key = $value;
-            }
+
+            $comic['artists'] = implode(',', $comic['artists']);
+            $comic['writers'] = implode(',', $comic['writers']);
+
+            $db_comic->fill($comic);
 
             $db_comic->save();
         }

@@ -20,6 +20,7 @@
             text-transform: uppercase;
             font-size: 1.2rem;
             font-weight: 700;
+            margin: 0;
         }
 
     }
@@ -29,10 +30,15 @@
         flex-wrap: wrap;
     }
 
-    .card {
+    .my-card {
         padding: 1rem 0.5rem;
         height: auto;
         flex-basis: calc(100% / 6);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
         figure {
             width: 175px;
@@ -40,6 +46,7 @@
             overflow: hidden;
             position: relative;
             text-align: center;
+
 
             img {
                 position: relative;
@@ -55,6 +62,16 @@
         h5 {
             margin-top: 10px;
             padding-left: 2px;
+            width: 100%;
+            text-align: center;
+            padding: 0 20px;
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+                text-transform: none;
+            }
         }
     }
 
@@ -72,6 +89,28 @@
             font-size: 0.7rem;
             font-weight: 700;
             color: white;
+        }
+    }
+
+    #go-add {
+        justify-self: center;
+
+        width: 100%;
+        background-image: url(/resources/img/texture-gradient-spots-dark-11570398909eugfy6afsz.jpg);
+        background-size: cover;
+
+        padding: 15px 0;
+        border-radius: 10px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            text-transform: none;
+
+            h5 {
+                margin: 0;
+            }
         }
     }
 }

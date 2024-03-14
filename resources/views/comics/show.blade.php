@@ -42,9 +42,7 @@
                             Art by:
                         </div>
                         <div class="content">
-                            @foreach ($comic->artists as $artist )
-                            <a href="#">{{$artist}}{{$loop->last ? '.' : ','}}</a>
-                            @endforeach
+                            <a href="#">{{$comic->artists}}</a>
                         </div>
                     </div>
                     <div id="writers" class="flex space-between">
@@ -52,9 +50,8 @@
                             Written by:
                         </div>
                         <div class="content">
-                            @foreach ($comic->writers as $writer )
-                            <a href="#">{{$writer}}{{$loop->last ? '.' : ','}}</a>
-                            @endforeach
+                            
+                            <a href="#">{{$comic->writers}}</a>
                         </div>
                     </div>
                 </div>

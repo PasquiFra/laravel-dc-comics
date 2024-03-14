@@ -1,0 +1,67 @@
+#home-content {
+
+    background-image: url(/resources/img/images.jpeg);
+    background-size: cover;
+
+    h1 {
+        color: white;
+    }
+
+    .flex-rules {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .options {
+        height: 250px;
+        width: 250px;
+
+        border-radius: 20px;
+
+    }
+
+    a {
+        height: 100%;
+        display: flex;
+        text-decoration: none;
+        text-transform: none;
+        justify-content: center;
+
+        h5 {
+            color: white;
+            align-self: center;
+            font-size: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+
+    #add-comics {
+        background-image: url(/resources/img/1413451117_justice-league-bis.webp);
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    #movies {
+        background-image: url(/resources/img/Dc-universe-rebirth.jpeg);
+        background-size: cover;
+    }
+
+    #go-shop {
+        background-image: url(/resources/img/81h0onRLvgL._AC_SL1500_.jpg);
+        background-size: cover;
+    }
+
+    #fans {
+        background-image: url(/resources/img/personaggi-potenti-DC-2-710x1080.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}

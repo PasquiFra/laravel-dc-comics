@@ -16,18 +16,19 @@
     @include('components.header')
 
     {{-- MAIN CONTENT --}}
-    <main>
-        @yield('main-content')
-    </main>
+    @yield('main-content')
+
 
     {{-- Riferimento al Footer-Top --}}
-        @include('components.footer-top')
+    @include('components.footer-top')
     
     {{-- Riferimento al Footer-Center --}}
-        @include('components.footer-center')
+    @include('components.footer-center')
     
     {{-- Riferimento al Footer-Bottom --}}
-        @include('components.footer-bottom')
+    @include('components.footer-bottom')
     
+    {{-- se necessario è possibile includere uno script --}}
+    @yield('script')
 </body>
 </html>

@@ -4,5 +4,9 @@
 @use './components/footer-top.scss';
 @use './components/footer-center.scss';
 @use './components/footer-bottom.scss';
+@use './components/pages/home.scss';
 @use './components/pages/comics.scss';
 @use './components/pages/show.scss';
+@use './components/pages/create.scss';
+
+@import '~bootstrap/scss/bootstrap';

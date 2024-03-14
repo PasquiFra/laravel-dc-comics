@@ -18,4 +18,46 @@ class ComicController extends Controller
     {
         return view('comics.show', compact('comic'));
     }
+
+    public function create()
+    {
+        return view('comics.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'string',
+            'thumb' => 'url:http,https',
+            'price' => 'string',
+            'series' => 'required|string',
+            'type' => 'required|string',
+            'sale_date' => 'required|date',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
+        ]);
+
+        $data = $request->all();
+
+        $new_comic = new Comic();
+        /*
+        $new_comic->title = $data['title'];
+        $new_comic->description = $data['description'];
+        $new_comic->thumb = $data['thumb'];
+        $new_comic->price = $data['price'];
+        $new_comic->series = $data['series'];
+        $new_comic->type = $data['type'];
+        $new_comic->sale_date = $data['sale_date'];
+        $new_comic->artists = $data['artists'];
+        $new_comic->writers = $data['writers'];
+        */
+
+        $new_comic->fill($data);
+
+        $new_comic->save();
+
+        return redirect()->route('comics.show', $new_comic->id);
+    }
 }
