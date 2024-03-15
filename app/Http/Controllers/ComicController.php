@@ -28,7 +28,7 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|string',
+            'title' => 'required|string|unique:comics',
             'description' => 'string',
             'thumb' => 'url:http,https',
             'price' => 'string',
@@ -59,5 +59,17 @@ class ComicController extends Controller
         $new_comic->save();
 
         return redirect()->route('comics.show', $new_comic->id);
+    }
+
+    public function edit(Comic $comic)
+    {
+        return view('comics.edit', compact('comic'));
+    }
+
+    public function update(Request $request, Comic $comic)
+    {
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic);
     }
 }

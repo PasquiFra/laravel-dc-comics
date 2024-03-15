@@ -12,6 +12,7 @@
                     <img src="{{$comic->thumb}}" alt="">
                     <span class="add-1">COMIC BOOK</span>
                     <span class="add-2">VIEW GALLERY</span>
+                    <a href="{{route('comics.edit', $comic->id)}}">Modifica</a>
                 </figure>
             </div>
             <div class="flex space-between width-full">
