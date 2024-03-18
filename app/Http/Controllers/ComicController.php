@@ -12,8 +12,8 @@ class ComicController extends Controller
 
     public function index()
     {
-        $books = Comic::all();
-        return view('comics.index', compact('books'));
+        $comics = Comic::all();
+        return view('comics.index', compact('comics'));
     }
 
     public function show(Comic $comic)
@@ -60,6 +60,13 @@ class ComicController extends Controller
         $data = $request->all();
         $comic->update($data);
         return redirect()->route('comics.show', $comic);
+    }
+
+    public function destroy(Comic $comic)
+    {
+        $comic->delete();
+
+        return to_route('comics.index');
     }
 
     private function validateFields($data)

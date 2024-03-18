@@ -12,7 +12,14 @@
                     <img src="{{$comic->thumb}}" alt="">
                     <span class="add-1">COMIC BOOK</span>
                     <span class="add-2">VIEW GALLERY</span>
-                    <a href="{{route('comics.edit', $comic->id)}}">Modifica</a>
+                    <div id="edits">
+                        <a href="{{route('comics.edit', $comic->id)}}" class="btn">Modifica</a>
+                        <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">CANCELLA</button>
+                        </form>
+                    </div>
                 </figure>
             </div>
             <div class="flex space-between width-full">

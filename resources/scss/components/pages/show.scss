@@ -59,7 +59,12 @@
 
             }
 
-            &:hover a {
+            #edits {
+                display: none;
+            }
+
+            &:hover #edits {
+                display: flex;
                 align-self: center;
                 position: absolute;
                 bottom: 0;
@@ -67,10 +72,21 @@
                 left: 0;
                 right: 0;
 
-                background-color: rgba(0, 0, 0, 0.493);
-                color: white;
-                font-weight: 700;
-                text-decoration: none;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: 20px 0;
+
+                background-color: rgba(0, 0, 0, 0.75);
+
+                a,
+                form {
+                    color: white;
+                    font-weight: 700;
+                    text-decoration: none;
+
+                    padding: 10px;
+                    align-self: center;
+                }
 
             }
 

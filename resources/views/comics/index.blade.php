@@ -11,16 +11,24 @@
                 <h1 class="flex">current series</h1>
             </div>
             <ul class="card-col mt-3">
-                @foreach ($books as $book)
+                @foreach ($comics as $comic)
                 <li class="col">
                     <div class="my-card">
                         <figure>
-                            <a href="{{route('comics.show', $book->id)}}">
-                                <img src="{{$book['thumb']}}" alt="">
+                            <a href="{{route('comics.show', $comic->id)}}">
+                                <img src="{{$comic['thumb']}}" alt="">
+                                <div id="edits">
+                                    <a href="{{route('comics.edit', $comic->id)}}" class="btn">Modifica</a>
+                                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">CANCELLA</button>
+                                    </form>
+                                </div>
                             </a>
                         </figure>
                         <h5>
-                            <a href="{{route('comics.show', $book->id)}}">{{$book['title']}}</a>
+                            <a href="{{route('comics.show', $comic->id)}}">{{$comic['title']}}</a>
                         </h5>
                     </div>
                 </li>
