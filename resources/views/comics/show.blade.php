@@ -14,7 +14,7 @@
                     <span class="add-2">VIEW GALLERY</span>
                     <div id="edits">
                         <a href="{{route('comics.edit', $comic->id)}}" class="btn">Modifica</a>
-                        <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                        <form action="{{route('comics.destroy', $comic->id)}}" method="POST" id="form-delete">
                             @method('delete')
                             @csrf
                             <button type="submit" class="btn btn-danger">CANCELLA</button>
@@ -87,4 +87,8 @@
             
         </div>
     </section>
+@endsection
+
+@section('script')
+    @include('scripts.delete-confirmation')
 @endsection

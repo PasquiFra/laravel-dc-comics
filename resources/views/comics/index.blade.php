@@ -22,7 +22,7 @@
                                 <img src="{{$comic['thumb']}}" alt="">
                                 <div id="edits">
                                     <a href="{{route('comics.edit', $comic->id)}}" class="btn">Modifica</a>
-                                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST" id="form-delete">
                                         @method('delete')
                                         @csrf
                                         <button type="submit" class="btn btn-danger">CANCELLA</button>
@@ -47,4 +47,8 @@
             </ul>
         </div>
     </section>
+@endsection
+
+@section('script')
+    @include('scripts.delete-confirmation')
 @endsection
