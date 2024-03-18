@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -26,20 +28,7 @@ class ComicController extends Controller
 
     public function store(Request $request)
     {
-
-        $request->validate([
-            'title' => 'required|string|unique:comics',
-            'description' => 'string',
-            'thumb' => 'url:http,https',
-            'price' => 'string',
-            'series' => 'required|string',
-            'type' => 'required|string',
-            'sale_date' => 'required|date',
-            'artists' => 'required|string',
-            'writers' => 'required|string',
-        ]);
-
-        $data = $request->all();
+        $data = $request->validated();
 
         $new_comic = new Comic();
         /*
@@ -71,5 +60,9 @@ class ComicController extends Controller
         $data = $request->all();
         $comic->update($data);
         return redirect()->route('comics.show', $comic);
+    }
+
+    private function validateFields($data)
+    {
     }
 }

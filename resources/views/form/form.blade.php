@@ -22,7 +22,7 @@
                 <input type="text" required id="title" name="title" class="form-control @error('title') is-invalid @elseif(old('title')) is-valid @enderror" value="{{old('title', $comic->title)}}" placeholder="Inserisci titolo...">
                 @error('title')
                 <div class="invalid-feedback">
-                    Campo errato
+                    {{$message}}
                 </div>   
                 @else        
                 <div class="valid-feedback">
