@@ -10,6 +10,9 @@
             <div id="current-series">
                 <h1 class="flex">current series</h1>
             </div>
+
+            @include('form.result-feedback')
+
             <ul class="card-col mt-3">
                 @foreach ($comics as $comic)
                 <li class="col">

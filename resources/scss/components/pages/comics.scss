@@ -88,12 +88,18 @@
             }
 
             a {
+                position: relative;
                 display: inline-block;
                 height: 100%;
-                width: 100%;
+                width: 146px;
+                overflow: hidden;
+
 
                 img {
-                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    translate: -50%;
+
                     height: 100%;
                     width: auto;
                 }

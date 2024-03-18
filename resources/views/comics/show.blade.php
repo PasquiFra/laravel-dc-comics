@@ -23,6 +23,9 @@
                 </figure>
             </div>
             <div class="flex space-between width-full">
+
+                @include('form.result-feedback')
+                
                 <div id="comic-content">
                     <h2>{{$comic->title}}</h2>
                     <div id="info" class="flex space-between">

@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-
-class StoreComicRequest extends FormRequest
+class UpdateComicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,10 @@ class StoreComicRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('comic');
+
         return [
-            'title' => 'required|string|unique:comics',
+            'title' => ['required', 'string', Rule::unique('comics')->ignore($id)],
             'description' => 'string',
             'thumb' => 'url:http,https',
             'price' => 'string',

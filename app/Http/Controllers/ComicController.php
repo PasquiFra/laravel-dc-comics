@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreComicRequest;
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
@@ -26,7 +27,7 @@ class ComicController extends Controller
         return view('comics.create', ['comic' => new Comic]);
     }
 
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
         $data = $request->validated();
 
@@ -55,18 +56,22 @@ class ComicController extends Controller
         return view('comics.edit', compact('comic'));
     }
 
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $comic->update($data);
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)
+            ->with('type', 'success')
+            ->with('message', "$comic->title modificato con successo.");
     }
 
     public function destroy(Comic $comic)
     {
         $comic->delete();
 
-        return to_route('comics.index');
+        return to_route('comics.index')
+            ->with('type', 'success')
+            ->with('message', "$comic->title eliminato con successo.");
     }
 
     private function validateFields($data)

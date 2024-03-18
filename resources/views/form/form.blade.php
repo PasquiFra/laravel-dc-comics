@@ -11,11 +11,11 @@
 
         @include('form.validation')
 
-        @if ($comic->exists())
-            <form action="{{route('comics.store')}}" method="post" novalidate class="flex container py-4 justify-content-center">
-        @else
+        @if ($comic->exists)
             <form action="{{route('comics.update', $comic->id  ) }}" method="post" class="flex container py-4 justify-content-center">
             @method('put')
+        @else
+            <form action="{{route('comics.store')}}" method="post" class="flex container py-4 justify-content-center">
         @endif
             @csrf
 
