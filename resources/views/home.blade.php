@@ -4,9 +4,9 @@
 
 @section('main-content')
     <main id="home-content">
-        <h1 class="text-center py-2">Benvenuto nell'Universo DC - Comix!</h1>
-        <div class="container flex-rules">
-            <div class="row">
+        <h1 class="text-center py-4">Benvenuto nell'Universo DC - Comix!</h1>
+        <div class="container flex-rules pb-2 py-3">
+            <div class="row ">
                 <div class="col my-4">
                     <div id="add-comics" class="options mb-3">
                         <a href="{{route('comics.create')}}">
